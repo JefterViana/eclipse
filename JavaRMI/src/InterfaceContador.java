@@ -6,4 +6,6 @@ public interface InterfaceContador extends Remote {
 	public int getValor() throws RemoteException;
 	// Incrementa o contador e retorna seu novo valor
 	public int novoValor() throws RemoteException;
+	// Retorna uma msg do servidor
+	public String hello() throws RemoteException;
 }

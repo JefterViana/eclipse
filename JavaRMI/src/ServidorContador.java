@@ -1,4 +1,4 @@
-/** HelloServer.java **/
+/** ServidorContador.java **/
 import java.rmi.*;
 import java.rmi.server.*;
 import java.rmi.registry.*;
@@ -14,19 +14,16 @@ public class ServidorContador implements InterfaceContador {
 			
 			// Registra a stub no RMI Registry para que ela seja obtida
 			//pelos clientes
-			//Registry registry = LocateRegistry.getRegistry(4556);
 			Registry registry = LocateRegistry.createRegistry(4765);
-			registry.bind("novoValor", stub);
-			registry.bind("getValor", stub);
-			System.out.println("Servidor pronto");
+			registry.bind("ContadorRMI", stub);
+			System.out.println("Servidor pronto!");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		}
 	
 		public String hello() throws RemoteException {
-			System.out.println("Executando hello()");
-			return "Hello!!!";
+			return "Olá!!!";
 		}
 		
 		int valorInicial;
